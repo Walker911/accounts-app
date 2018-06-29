@@ -15,14 +15,15 @@ public class Account implements Serializable {
 
     @Id
     @GeneratedValue
+    @Column(columnDefinition = "bigint comment '主键'")
     private Long id;
 
-    @Column
+    @Column(columnDefinition = "date comment '日期'")
     @JsonDeserialize(using = CustomDateDeserializer.class)
     private Date date;
-    @Column
+    @Column(columnDefinition = "varchar(100) comment '标题'")
     private String title;
-    @Column
+    @Column(columnDefinition = "double comment '数量'")
     private Double amount;
 
     public Account() {
